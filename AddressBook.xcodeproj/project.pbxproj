@@ -19,6 +19,9 @@
 		1C5FAA5B187B229C00F5E8E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5FAA43187B229C00F5E8E6 /* UIKit.framework */; };
 		1C5FAA63187B229C00F5E8E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FAA61187B229C00F5E8E6 /* InfoPlist.strings */; };
 		1C5FAA65187B229C00F5E8E6 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA64187B229C00F5E8E6 /* AddressBookTests.m */; };
+		1C5FAA71187B2FA700F5E8E6 /* FormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA6F187B2FA700F5E8E6 /* FormContactViewController.m */; };
+		1C5FAA72187B2FA700F5E8E6 /* FormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */; };
+		1C5FAA75187C1FE500F5E8E6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA74187C1FE500F5E8E6 /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		1C5FAA60187B229C00F5E8E6 /* AddressBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AddressBookTests-Info.plist"; sourceTree = "<group>"; };
 		1C5FAA62187B229C00F5E8E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C5FAA64187B229C00F5E8E6 /* AddressBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTests.m; sourceTree = "<group>"; };
+		1C5FAA6E187B2FA700F5E8E6 /* FormContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormContactViewController.h; sourceTree = "<group>"; };
+		1C5FAA6F187B2FA700F5E8E6 /* FormContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormContactViewController.m; sourceTree = "<group>"; };
+		1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormContactViewController.xib; sourceTree = "<group>"; };
+		1C5FAA73187C1FE500F5E8E6 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		1C5FAA74187C1FE500F5E8E6 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,11 @@
 			children = (
 				1C5FAA4E187B229C00F5E8E6 /* AppDelegate.h */,
 				1C5FAA4F187B229C00F5E8E6 /* AppDelegate.m */,
+				1C5FAA6E187B2FA700F5E8E6 /* FormContactViewController.h */,
+				1C5FAA6F187B2FA700F5E8E6 /* FormContactViewController.m */,
+				1C5FAA73187C1FE500F5E8E6 /* Contact.h */,
+				1C5FAA74187C1FE500F5E8E6 /* Contact.m */,
+				1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */,
 				1C5FAA51187B229C00F5E8E6 /* Images.xcassets */,
 				1C5FAA46187B229C00F5E8E6 /* Supporting Files */,
 			);
@@ -221,6 +234,7 @@
 			files = (
 				1C5FAA4A187B229C00F5E8E6 /* InfoPlist.strings in Resources */,
 				1C5FAA52187B229C00F5E8E6 /* Images.xcassets in Resources */,
+				1C5FAA72187B2FA700F5E8E6 /* FormContactViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5FAA75187C1FE500F5E8E6 /* Contact.m in Sources */,
+				1C5FAA71187B2FA700F5E8E6 /* FormContactViewController.m in Sources */,
 				1C5FAA50187B229C00F5E8E6 /* AppDelegate.m in Sources */,
 				1C5FAA4C187B229C00F5E8E6 /* main.m in Sources */,
 			);
