@@ -25,6 +25,12 @@
     return self;
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void) showContactForm
 {
     FormContactViewController * formContact = [[FormContactViewController alloc] init];
