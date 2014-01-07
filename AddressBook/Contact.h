@@ -10,4 +10,10 @@
 
 @interface Contact : NSObject
 
+@property NSString *name;
+@property NSString *mobile;
+@property NSString *email;
+@property NSString *address;
+@property NSString *website;
+
 @end

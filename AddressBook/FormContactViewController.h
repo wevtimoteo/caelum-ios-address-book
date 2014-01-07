@@ -17,5 +17,6 @@
 @property (weak,nonatomic) IBOutlet UITextField *website;
 
 - (IBAction)saveContactData:(id)sender;
+- (IBAction)nextField:(id)sender;
 
 @end

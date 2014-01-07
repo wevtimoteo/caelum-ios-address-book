@@ -7,6 +7,7 @@
 //
 
 #import "FormContactViewController.h"
+#import "Contact.h"
 
 @interface FormContactViewController ()
 
@@ -37,14 +38,20 @@
 
 - (IBAction)saveContactData:(id)sender
 {
-    NSMutableDictionary * contact = [[NSMutableDictionary alloc] init];
-    [contact setObject:self.name.text forKey:@"name"];
-    [contact setObject:self.mobile.text forKey:@"mobile"];
-    [contact setObject:self.email.text forKey:@"email"];
-    [contact setObject:self.address.text forKey:@"address"];
-    [contact setObject:self.website.text forKey:@"website"];
-     
-     NSLog(@"Contato adicionado: %@", contact);
+    Contact * contact = [[Contact alloc] init];
+    
+    contact.name = self.name.text;
+    contact.mobile = self.mobile.text;
+    contact.email = self.email.text;
+    contact.address = self.address.text;
+    contact.website = self.website.text;
+    
+    NSLog(@"Contato adicionado: %@", contact);
+    
+    [self.view endEditing:YES];
+}
+
+- (IBAction)nextField:(id)sender {
 }
 
 @end
