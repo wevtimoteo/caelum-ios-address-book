@@ -51,7 +51,16 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)nextField:(id)sender {
+- (IBAction)nextField:(UITextField *)currentField
+{
+    NSInteger tag = currentField.tag + 1;
+    UIResponder * nextField = [self.view viewWithTag:tag];
+    
+    if (nextField != nil) {
+        [nextField becomeFirstResponder];
+    } else {
+        [self saveContactData:self];
+    }
 }
 
 @end
