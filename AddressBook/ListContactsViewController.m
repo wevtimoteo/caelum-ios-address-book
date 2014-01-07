@@ -8,6 +8,7 @@
 
 #import "ListContactsViewController.h"
 #import "FormContactViewController.h"
+#import "Contact.h"
 
 @implementation ListContactsViewController
 
@@ -29,6 +30,30 @@
     FormContactViewController * formContact = [[FormContactViewController alloc] init];
     formContact.contacts = self.contacts;
     [self.navigationController pushViewController:formContact animated:YES];
+}
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.contacts count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * pool = @"contacts_pool";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier: pool];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: pool];
+    }
+    
+    Contact * contact = self.contacts[indexPath.row];
+    cell.textLabel.text = contact.name;
+    return cell;
 }
 
 @end
