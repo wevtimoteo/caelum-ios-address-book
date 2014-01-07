@@ -7,15 +7,19 @@
 //
 
 #import "AppDelegate.h"
-#import "FormContactViewController.h"
+#import "ListContactsViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.contacts = [[NSMutableArray alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    FormContactViewController * form = [[FormContactViewController alloc] init];
-    self.window.rootViewController = form;
+    ListContactsViewController * list = [[ListContactsViewController alloc] init];
+    list.contacts = self.contacts;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:list];
+    self.window.rootViewController = nav;
+
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

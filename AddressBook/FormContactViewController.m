@@ -9,10 +9,6 @@
 #import "FormContactViewController.h"
 #import "Contact.h"
 
-@interface FormContactViewController ()
-
-@end
-
 @implementation FormContactViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -21,6 +17,18 @@
     if (self) {
         // Custom initialization
     }
+    return self;
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveContactData:)];
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
+    
     return self;
 }
 
@@ -36,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveContactData:(id)sender
+- (Contact *)loadContactData
 {
     Contact * contact = [[Contact alloc] init];
     
@@ -46,9 +54,16 @@
     contact.address = self.address.text;
     contact.website = self.website.text;
     
-    NSLog(@"Contato adicionado: %@", contact);
+    return contact;
+}
+
+- (void)saveContactData:(id)sender
+{
+    Contact * contact = [self loadContactData];
     
-    [self.view endEditing:YES];
+    [self.contacts addObject:contact];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)nextField:(UITextField *)currentField
@@ -56,7 +71,7 @@
     NSInteger tag = currentField.tag + 1;
     UIResponder * nextField = [self.view viewWithTag:tag];
     
-    if (nextField != nil) {
+    if (nextField) {
         [nextField becomeFirstResponder];
     } else {
         [self saveContactData:self];

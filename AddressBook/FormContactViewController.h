@@ -16,7 +16,9 @@
 @property (weak,nonatomic) IBOutlet UITextField *address;
 @property (weak,nonatomic) IBOutlet UITextField *website;
 
-- (IBAction)saveContactData:(id)sender;
+@property (weak,atomic) NSMutableArray * contacts;
+
+- (void)saveContactData:(id) sender;
 - (IBAction)nextField:(UITextField *)currentField;
 
 @end

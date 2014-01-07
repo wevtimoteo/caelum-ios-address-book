@@ -22,6 +22,7 @@
 		1C5FAA71187B2FA700F5E8E6 /* FormContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA6F187B2FA700F5E8E6 /* FormContactViewController.m */; };
 		1C5FAA72187B2FA700F5E8E6 /* FormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */; };
 		1C5FAA75187C1FE500F5E8E6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA74187C1FE500F5E8E6 /* Contact.m */; };
+		1C5FAA78187C5EEF00F5E8E6 /* ListContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormContactViewController.xib; sourceTree = "<group>"; };
 		1C5FAA73187C1FE500F5E8E6 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		1C5FAA74187C1FE500F5E8E6 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		1C5FAA76187C5EEF00F5E8E6 /* ListContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListContactsViewController.h; sourceTree = "<group>"; };
+		1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListContactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				1C5FAA4F187B229C00F5E8E6 /* AppDelegate.m */,
 				1C5FAA6E187B2FA700F5E8E6 /* FormContactViewController.h */,
 				1C5FAA6F187B2FA700F5E8E6 /* FormContactViewController.m */,
+				1C5FAA76187C5EEF00F5E8E6 /* ListContactsViewController.h */,
+				1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */,
 				1C5FAA73187C1FE500F5E8E6 /* Contact.h */,
 				1C5FAA74187C1FE500F5E8E6 /* Contact.m */,
 				1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */,
@@ -256,6 +261,7 @@
 				1C5FAA75187C1FE500F5E8E6 /* Contact.m in Sources */,
 				1C5FAA71187B2FA700F5E8E6 /* FormContactViewController.m in Sources */,
 				1C5FAA50187B229C00F5E8E6 /* AppDelegate.m in Sources */,
+				1C5FAA78187C5EEF00F5E8E6 /* ListContactsViewController.m in Sources */,
 				1C5FAA4C187B229C00F5E8E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
