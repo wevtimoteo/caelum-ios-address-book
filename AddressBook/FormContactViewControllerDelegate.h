@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 Weverton do Couto Timoteo. All rights reserved.
 //
 
-@protocol FormContactViewControllerDelegate
+@protocol FormContactViewControllerDelegate <NSObject>
+
 
 - (void) saveContact:(Contact *) newContact;
+
+@optional
 - (void) updateContact:(Contact *) contact;
 
 @end

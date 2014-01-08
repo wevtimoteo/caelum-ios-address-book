@@ -93,6 +93,10 @@
 {
     [self loadContactData];
     
+    if ([self.delegate respondsToSelector:@selector(updateContact:)]) {
+        [self.delegate updateContact: self.contact];
+    }
+
     [self.delegate updateContact: self.contact];
     
     [self.navigationController popViewControllerAnimated:YES];

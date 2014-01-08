@@ -91,9 +91,4 @@
     [self.contacts addObject:contact];
 }
 
--(void) updateContact:(Contact *)contact
-{
-    NSLog(@"Contato alterado: %@", contact);
-}
-
 @end
