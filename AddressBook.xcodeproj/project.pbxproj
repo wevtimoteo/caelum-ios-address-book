@@ -386,6 +386,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,6 +400,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -465,6 +467,7 @@
 				1C5FAA6A187B229C00F5E8E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C5FAA6B187B229C00F5E8E6 /* Build configuration list for PBXNativeTarget "AddressBookTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +476,7 @@
 				1C5FAA6D187B229C00F5E8E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

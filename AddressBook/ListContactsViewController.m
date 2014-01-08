@@ -12,6 +12,8 @@
 
 @implementation ListContactsViewController
 
+# pragma mark - init
+
 - (id) init
 {
     self = [super init];
@@ -26,6 +28,8 @@
 
     return self;
 }
+
+# pragma mark - viewLoad
 
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -45,6 +49,14 @@
     [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
 }
+
+- (void) viewDidLoad
+{
+    UILongPressGestureRecognizer * longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showActions:)];
+    [self.tableView addGestureRecognizer:longGesture];
+}
+
+# pragma mark - managing view
 
 - (void) showContactForm
 {
@@ -99,6 +111,23 @@
     form.delegate = self;
     [self.navigationController pushViewController:form animated:YES];
 }
+
+- (void) showActions:(UIGestureRecognizer *)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint point = [gesture locationInView:self.tableView];
+        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:point];
+        Contact * contact = self.contacts[indexPath.row];
+        NSLog(@"contact: %@", contact);
+
+        UIActionSheet * actionsList = [[UIActionSheet alloc] initWithTitle:contact.name delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar",@"Enviar e-mail",@"Visualizar site",@"Abrir Mapa", nil];
+
+        [actionsList showInView:self.view];
+
+    }
+}
+
+# pragma mark - contact management
 
 - (void) saveContact:(Contact *)contact
 {
