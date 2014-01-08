@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Contact.h"
 
-@interface ListContactsViewController : UITableViewController
+#import "FormContactViewControllerDelegate.h"
+
+@interface ListContactsViewController : UITableViewController <FormContactViewControllerDelegate>
 
 @property (weak, atomic) NSMutableArray * contacts;
+@property (assign) NSInteger selectedRow;
 
 - (void) showContactForm;
-- (void) saveContact:(Contact *) contact;
 
 @end

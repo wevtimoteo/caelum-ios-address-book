@@ -17,6 +17,7 @@
     self = [super init];
     
     if (self) {
+        self.selectedRow = -1;
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showContactForm)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -26,10 +27,23 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+    [super viewWillAppear:animated];
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    [super viewDidAppear:animated];
+    
+    if (self.selectedRow < -1) {
+        return;
+    }
+
+    NSIndexPath * indexPath = [NSIndexPath indexPathForItem:self.selectedRow inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
 }
 
 - (void) showContactForm
@@ -81,14 +95,21 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Contact * contact = self.contacts[indexPath.row];
-    FormContactViewController * form = [[FormContactViewController alloc] init];
-    form.contact = contact;
+    FormContactViewController * form = [[FormContactViewController alloc] initWithContact:contact];
+    form.delegate = self;
     [self.navigationController pushViewController:form animated:YES];
 }
 
 - (void) saveContact:(Contact *)contact
 {
     [self.contacts addObject:contact];
+    self.selectedRow = [self.contacts indexOfObject:contact];
+}
+
+
+- (void) updateContact:(Contact *)contact
+{
+    self.selectedRow = [self.contacts indexOfObject:contact];
 }
 
 @end

@@ -11,6 +11,8 @@
 
 @implementation FormContactViewController
 
+#pragma mark - init
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -19,6 +21,7 @@
     }
     return self;
 }
+
 
 - (id)init
 {
@@ -38,12 +41,14 @@
     if (self) {
         self.contact = contact;
         self.navigationItem.title = @"Alteração";
-        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithTitle:@"Altera" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact)];
+        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithTitle:@"Altera" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact:)];
         self.navigationItem.rightBarButtonItem = editButton;
     }
     
     return self;
 }
+
+#pragma mark - load
 
 - (void)viewDidLoad
 {
@@ -80,6 +85,8 @@
     return self.contact;
 }
 
+#pragma mark - contact
+
 - (void)addContact:(id)sender
 {
     Contact * contact = [self loadContactData];
@@ -101,6 +108,8 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - ux
 
 - (IBAction)nextField:(UITextField *)currentField
 {
