@@ -25,8 +25,21 @@
     self = [super init];
     
     if (self) {
-        UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveContactData:)];
+        UIBarButtonItem * saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(addContact:)];
         self.navigationItem.rightBarButtonItem = saveButton;
+    }
+    
+    return self;
+}
+
+- (id)initWithContact:(Contact *) contact
+{
+    self = [super init];
+    if (self) {
+        self.contact = contact;
+        self.navigationItem.title = @"Alteração";
+        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithTitle:@"Altera" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact)];
+        self.navigationItem.rightBarButtonItem = editButton;
     }
     
     return self;
@@ -36,6 +49,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    if (self.contact) {
+        self.name.text = self.contact.name;
+        self.mobile.text = self.contact.mobile;
+        self.email.text = self.contact.email;
+        self.address.text = self.contact.address;
+        self.website.text = self.contact.website;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,22 +67,33 @@
 
 - (Contact *)loadContactData
 {
-    Contact * contact = [[Contact alloc] init];
+    if (!self.contact) {
+        self.contact = [[Contact alloc] init];
+    }
     
-    contact.name = self.name.text;
-    contact.mobile = self.mobile.text;
-    contact.email = self.email.text;
-    contact.address = self.address.text;
-    contact.website = self.website.text;
+    self.contact.name = self.name.text;
+    self.contact.mobile = self.mobile.text;
+    self.contact.email = self.email.text;
+    self.contact.address = self.address.text;
+    self.contact.website = self.website.text;
     
-    return contact;
+    return self.contact;
 }
 
-- (void)saveContactData:(id)sender
+- (void)addContact:(id)sender
 {
     Contact * contact = [self loadContactData];
     
-    [self.contacts addObject:contact];
+    [self.delegate saveContact: contact];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)updateContact:(id)sender
+{
+    [self loadContactData];
+    
+    [self.delegate updateContact: self.contact];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -74,7 +106,7 @@
     if (nextField) {
         [nextField becomeFirstResponder];
     } else {
-        [self saveContactData:self];
+        [self addContact:self];
     }
 }
 

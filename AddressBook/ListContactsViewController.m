@@ -20,6 +20,7 @@
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showContactForm)];
         self.navigationItem.rightBarButtonItem = addButton;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
 
     return self;
@@ -34,7 +35,7 @@
 - (void) showContactForm
 {
     FormContactViewController * formContact = [[FormContactViewController alloc] init];
-    formContact.contacts = self.contacts;
+    formContact.delegate = self;
     [self.navigationController pushViewController:formContact animated:YES];
 }
 
@@ -60,6 +61,39 @@
     Contact * contact = self.contacts[indexPath.row];
     cell.textLabel.text = contact.name;
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.contacts removeObjectAtIndex: indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    Contact * contact = self.contacts[sourceIndexPath.row];
+    [self.contacts removeObjectAtIndex:sourceIndexPath.row];
+    [self.contacts insertObject:contact atIndex:destinationIndexPath.row];
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Contact * contact = self.contacts[indexPath.row];
+    FormContactViewController * form = [[FormContactViewController alloc] init];
+    form.contact = contact;
+    [self.navigationController pushViewController:form animated:YES];
+}
+
+- (void) saveContact:(Contact *)contact
+{
+    [self.contacts addObject:contact];
+}
+
+-(void) updateContact:(Contact *)contact
+{
+    NSLog(@"Contato alterado: %@", contact);
 }
 
 @end

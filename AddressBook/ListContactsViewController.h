@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Contact.h"
 
 @interface ListContactsViewController : UITableViewController
 
 @property (weak, atomic) NSMutableArray * contacts;
 
 - (void) showContactForm;
+- (void) saveContact:(Contact *) contact;
 
 @end

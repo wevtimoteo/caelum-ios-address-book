@@ -59,6 +59,7 @@
 		1C5FAA74187C1FE500F5E8E6 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		1C5FAA76187C5EEF00F5E8E6 /* ListContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListContactsViewController.h; sourceTree = "<group>"; };
 		1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListContactsViewController.m; sourceTree = "<group>"; };
+		1C5FAA7B187D9F6A00F5E8E6 /* FormContactViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormContactViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +119,7 @@
 		1C5FAA45187B229C00F5E8E6 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				1C5FAA7B187D9F6A00F5E8E6 /* FormContactViewControllerDelegate.h */,
 				1C5FAA4E187B229C00F5E8E6 /* AppDelegate.h */,
 				1C5FAA4F187B229C00F5E8E6 /* AppDelegate.m */,
 				1C5FAA6E187B2FA700F5E8E6 /* FormContactViewController.h */,

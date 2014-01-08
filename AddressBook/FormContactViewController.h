@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
+#import "FormContactViewControllerDelegate.h"
 
 @interface FormContactViewController : UIViewController
 
@@ -16,9 +18,11 @@
 @property (weak,nonatomic) IBOutlet UITextField *address;
 @property (weak,nonatomic) IBOutlet UITextField *website;
 
-@property (weak,atomic) NSMutableArray * contacts;
+@property (strong,atomic) Contact * contact;
+@property (weak,atomic) id<FormContactViewControllerDelegate> delegate;
 
-- (void)saveContactData:(id) sender;
+- (void)addContact:(id) sender;
 - (IBAction)nextField:(UITextField *)currentField;
+- (id)initWithContact:(Contact *) contact;
 
 @end
