@@ -26,10 +26,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ListContactsViewController * list = [[ListContactsViewController alloc] init];
     ContactOnMapViewController * map = [[ContactOnMapViewController alloc] init];
+
+    UINavigationController * navMap = [[UINavigationController alloc] initWithRootViewController:map];
+
     list.contacts = self.contacts;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:list];
     UITabBarController * tabBar = [[UITabBarController alloc] init];
-    tabBar.viewControllers = @[nav, map];
+    tabBar.viewControllers = @[nav, navMap];
 
     self.window.rootViewController = tabBar;
 

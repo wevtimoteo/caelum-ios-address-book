@@ -20,13 +20,16 @@
     
     if (self) {
         self.selectedRow = -1;
-        UITabBarItem * tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:nil tag:0];
-        self.tabBarItem = tabItem;
 
         self.navigationItem.title = @"Contatos";
+
         UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showContactForm)];
         self.navigationItem.rightBarButtonItem = addButton;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
+        UIImage * img = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem * itm = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:img tag:0];
+        self.tabBarItem = itm;
     }
 
     return self;
@@ -44,7 +47,7 @@
 {
     [super viewDidAppear:animated];
     
-    if (self.selectedRow < -1) {
+    if (self.selectedRow <= -1) {
         return;
     }
 
