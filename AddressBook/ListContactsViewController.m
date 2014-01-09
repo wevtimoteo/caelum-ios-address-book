@@ -20,6 +20,9 @@
     
     if (self) {
         self.selectedRow = -1;
+        UITabBarItem * tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:nil tag:0];
+        self.tabBarItem = tabItem;
+
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showContactForm)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -54,6 +57,13 @@
 {
     UILongPressGestureRecognizer * longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showActions:)];
     [self.tableView addGestureRecognizer:longGesture];
+}
+
+# pragma mark - delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 # pragma mark - managing view
@@ -178,9 +188,19 @@
     [self openURL:urlStr];
 }
 
-- (void)sendEmail
+- (void)sendMail
 {
-    
+    if ([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController * mail = [[MFMailComposeViewController alloc] init];
+
+        [mail setToRecipients:@[selectedContact.email]];
+        [mail setSubject:[NSString stringWithFormat: @"Olá %@", selectedContact.name]];
+        mail.mailComposeDelegate = self;
+
+        [self presentViewController:mail animated:YES completion:nil];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Não é possível enviar e-mail" message:@"Seu dispositivo não possui nenhuma conta de e-mail configurada" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
 }
 
 # pragma mark - contact management

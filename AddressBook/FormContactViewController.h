@@ -10,7 +10,7 @@
 #import "Contact.h"
 #import "FormContactViewControllerDelegate.h"
 
-@interface FormContactViewController : UIViewController
+@interface FormContactViewController : UIViewController <UIImagePickerControllerDelegate>
 
 @property (weak,nonatomic) IBOutlet UITextField *name;
 @property (weak,nonatomic) IBOutlet UITextField *mobile;
@@ -20,9 +20,11 @@
 
 @property (strong,atomic) Contact * contact;
 @property (weak,atomic) id<FormContactViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *btnAvatar;
 
 - (void)addContact:(id) sender;
 - (IBAction)nextField:(UITextField *)currentField;
+- (IBAction)selectAvatar:(id)sender;
 - (id)initWithContact:(Contact *) contact;
 
 @end

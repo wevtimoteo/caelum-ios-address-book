@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Contact.h"
+#import <MessageUI/MessageUI.h>
 
+#import "Contact.h"
 #import "FormContactViewControllerDelegate.h"
 
-@interface ListContactsViewController : UITableViewController <FormContactViewControllerDelegate, UIActionSheetDelegate> {
+
+
+@interface ListContactsViewController : UITableViewController <FormContactViewControllerDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+
+{
     Contact * selectedContact;
 }
 

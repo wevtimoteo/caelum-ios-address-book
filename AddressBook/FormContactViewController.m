@@ -61,6 +61,12 @@
         self.email.text = self.contact.email;
         self.address.text = self.contact.address;
         self.website.text = self.contact.website;
+
+        if (self.contact.avatar) {
+            [self.btnAvatar setBackgroundImage:self.contact.avatar forState:UIControlStateNormal];
+            [self.btnAvatar setTitle:nil forState:UIControlStateNormal];
+        }
+
     }
 }
 
@@ -81,6 +87,11 @@
     self.contact.email = self.email.text;
     self.contact.address = self.address.text;
     self.contact.website = self.website.text;
+    self.contact.avatar = [self.btnAvatar backgroundImageForState:UIControlStateNormal];
+
+    NSLog(@"Avatar do contato: %@", self.contact.avatar);
+
+
     
     return self.contact;
 }
@@ -109,7 +120,16 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - ux
+# pragma mark - delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage * image = info[UIImagePickerControllerEditedImage];
+    [self.btnAvatar setBackgroundImage:image forState:UIControlStateNormal];
+    [self.btnAvatar setTitle:nil forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+# pragma mark - ux
 
 - (IBAction)nextField:(UITextField *)currentField
 {
@@ -120,6 +140,22 @@
         [nextField becomeFirstResponder];
     } else {
         [self addContact:self];
+    }
+}
+
+- (IBAction)selectAvatar:(id)sender
+{
+    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        [self presentViewController:picker animated:YES completion:nil];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Não foi possível alterar o avatar" message:@"Precisamos do acesso à suas fotos ou da galeria para mudar seu avatar" delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Tentar novamente", nil] show];
     }
 }
 

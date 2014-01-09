@@ -15,5 +15,6 @@
 @property NSString *email;
 @property NSString *address;
 @property NSString *website;
+@property (strong,atomic) UIImage * avatar;
 
 @end

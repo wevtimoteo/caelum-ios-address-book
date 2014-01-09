@@ -26,6 +26,7 @@
         self.email = [aDecoder decodeObjectForKey:@"email"];
         self.address = [aDecoder decodeObjectForKey:@"address"];
         self.website = [aDecoder decodeObjectForKey:@"website"];
+        self.avatar = [aDecoder decodeObjectForKey:@"avatar"];
     }
     
     return self;
@@ -38,6 +39,7 @@
     [aCoder encodeObject:self.email forKey:@"email"];
     [aCoder encodeObject:self.address forKey:@"address"];
     [aCoder encodeObject:self.website forKey:@"website"];
+    [aCoder encodeObject:self.avatar forKey:@"avatar"];
 }
 
 @end
