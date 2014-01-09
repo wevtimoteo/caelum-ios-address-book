@@ -11,7 +11,9 @@
 
 #import "FormContactViewControllerDelegate.h"
 
-@interface ListContactsViewController : UITableViewController <FormContactViewControllerDelegate, UIActionSheetDelegate>
+@interface ListContactsViewController : UITableViewController <FormContactViewControllerDelegate, UIActionSheetDelegate> {
+    Contact * selectedContact;
+}
 
 @property (weak, atomic) NSMutableArray * contacts;
 @property (assign) NSInteger selectedRow;

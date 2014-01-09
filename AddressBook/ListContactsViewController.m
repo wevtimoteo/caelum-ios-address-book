@@ -118,13 +118,69 @@
         CGPoint point = [gesture locationInView:self.tableView];
         NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:point];
         Contact * contact = self.contacts[indexPath.row];
-        NSLog(@"contact: %@", contact);
+
+        selectedContact = contact;
 
         UIActionSheet * actionsList = [[UIActionSheet alloc] initWithTitle:contact.name delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar",@"Enviar e-mail",@"Visualizar site",@"Abrir Mapa", nil];
 
         [actionsList showInView:self.view];
 
     }
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self call];
+            break;
+
+        case 1:
+            [self sendMail];
+            break;
+        case 2:
+            [self openSite];
+            break;
+        case 3:
+            [self showMap];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)call
+{
+    UIDevice *device = [UIDevice currentDevice];
+    if ([device.model isEqualToString:@"iPhone"]) {
+        NSString *phoneNumber = [NSString stringWithFormat:@"tel: %@", selectedContact.mobile];
+        [self openURL:phoneNumber];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Impossível fazer ligação" message:@"Seu dispositivo não é um iPhone" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+}
+
+- (void)openURL:(NSString *)urlStr
+{
+    NSURL * url = [NSURL URLWithString:urlStr];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (void)openSite
+{
+    [self openURL:selectedContact.website];
+}
+
+- (void)showMap
+{
+    NSString * urlStr = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", selectedContact.address] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    [self openURL:urlStr];
+}
+
+- (void)sendEmail
+{
+    
 }
 
 # pragma mark - contact management
