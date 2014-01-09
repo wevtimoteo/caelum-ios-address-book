@@ -49,7 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C1E0DB7187F12BD00AF38CE /* Tatuape.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tatuape.gpx; sourceTree = "<group>"; };
 		1C5FAA3C187B229C00F5E8E6 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5FAA3F187B229C00F5E8E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1C5FAA41187B229C00F5E8E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				1CE0DF6B187F082000B3191B /* Vila Mariana.gpx */,
-				1C1E0DB7187F12BD00AF38CE /* Tatuape.gpx */,
 			);
 			name = GPSPoints;
 			sourceTree = "<group>";
