@@ -9,6 +9,8 @@
                 <outlet property="address" destination="i9j-15-ggW" id="FEl-vY-zEX"/>
                 <outlet property="btnAvatar" destination="H0o-dw-Ysb" id="puL-LL-tT0"/>
                 <outlet property="email" destination="w9Z-yC-xNK" id="NxQ-7Q-Prv"/>
+                <outlet property="latitude" destination="RxN-Oj-eSS" id="0oL-Nr-WAW"/>
+                <outlet property="longitude" destination="H0g-Nr-tor" id="hr1-0d-VQB"/>
                 <outlet property="mobile" destination="IZa-2E-qht" id="NKQ-Qn-eJG"/>
                 <outlet property="name" destination="NpJ-UU-Njg" id="Dk6-Tm-BXU"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -49,7 +51,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TFE-Zu-s2c">
-                    <rect key="frame" x="20" y="217" width="35" height="21"/>
+                    <rect key="frame" x="20" y="219" width="35" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -109,6 +111,31 @@
                         <action selector="selectAvatar:" destination="-1" eventType="touchUpInside" id="FHH-Zk-8A5"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xoq-4S-Mpz">
+                    <rect key="frame" x="20" y="257" width="68" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2W-U8-brd">
+                    <rect key="frame" x="20" y="295" width="82" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="RxN-Oj-eSS">
+                    <rect key="frame" x="112" y="253" width="188" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="H0g-Nr-tor">
+                    <rect key="frame" x="112" y="291" width="188" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

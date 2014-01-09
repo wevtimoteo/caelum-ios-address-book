@@ -17,6 +17,8 @@
 @property (weak,nonatomic) IBOutlet UITextField *email;
 @property (weak,nonatomic) IBOutlet UITextField *address;
 @property (weak,nonatomic) IBOutlet UITextField *website;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
 
 @property (strong,atomic) Contact * contact;
 @property (weak,atomic) id<FormContactViewControllerDelegate> delegate;

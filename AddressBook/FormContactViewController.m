@@ -61,6 +61,8 @@
         self.email.text = self.contact.email;
         self.address.text = self.contact.address;
         self.website.text = self.contact.website;
+        self.latitude.text = [self.contact.latitude stringValue];
+        self.longitude.text = [self.contact.longitude stringValue];
 
         if (self.contact.avatar) {
             [self.btnAvatar setBackgroundImage:self.contact.avatar forState:UIControlStateNormal];
@@ -89,9 +91,10 @@
     self.contact.website = self.website.text;
     self.contact.avatar = [self.btnAvatar backgroundImageForState:UIControlStateNormal];
 
+    self.contact.latitude = [NSNumber numberWithDouble:[self.latitude.text doubleValue]];
+    self.contact.longitude = [NSNumber numberWithDouble:[self.longitude.text doubleValue]];
+
     NSLog(@"Avatar do contato: %@", self.contact.avatar);
-
-
     
     return self.contact;
 }

@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C1E0DB7187F12BD00AF38CE /* Tatuape.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tatuape.gpx; sourceTree = "<group>"; };
 		1C5FAA3C187B229C00F5E8E6 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5FAA3F187B229C00F5E8E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1C5FAA41187B229C00F5E8E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1E0DB6187F0D5500AF38CE /* GPSPoints */ = {
+			isa = PBXGroup;
+			children = (
+				1CE0DF6B187F082000B3191B /* Vila Mariana.gpx */,
+				1C1E0DB7187F12BD00AF38CE /* Tatuape.gpx */,
+			);
+			name = GPSPoints;
+			sourceTree = "<group>";
+		};
 		1C5FAA33187B229C00F5E8E6 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +163,6 @@
 			children = (
 				1CE0DF25187EFD3000B3191B /* ContactOnMapViewController.h */,
 				1CE0DF26187EFD3000B3191B /* ContactOnMapViewController.m */,
-				1CE0DF6B187F082000B3191B /* Vila Mariana.gpx */,
 				1CE0DF27187EFD3000B3191B /* ContactOnMapViewController.xib */,
 				1C5FAA7B187D9F6A00F5E8E6 /* FormContactViewControllerDelegate.h */,
 				1C5FAA4E187B229C00F5E8E6 /* AppDelegate.h */,
@@ -203,6 +212,7 @@
 		1CE0DF75187F083D00B3191B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C1E0DB6187F0D5500AF38CE /* GPSPoints */,
 				1CE0DF76187F087C00B3191B /* Images */,
 			);
 			name = Resources;

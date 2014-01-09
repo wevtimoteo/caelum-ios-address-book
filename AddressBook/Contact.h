@@ -16,5 +16,7 @@
 @property NSString *address;
 @property NSString *website;
 @property (strong,atomic) UIImage * avatar;
+@property (strong,atomic) NSNumber * latitude;
+@property (strong,atomic) NSNumber * longitude;
 
 @end

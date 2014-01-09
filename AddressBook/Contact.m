@@ -27,6 +27,8 @@
         self.address = [aDecoder decodeObjectForKey:@"address"];
         self.website = [aDecoder decodeObjectForKey:@"website"];
         self.avatar = [aDecoder decodeObjectForKey:@"avatar"];
+        self.latitude = [aDecoder decodeObjectForKey:@"latitude"];
+        self.longitude = [aDecoder decodeObjectForKey:@"longitude"];
     }
     
     return self;
@@ -40,6 +42,8 @@
     [aCoder encodeObject:self.address forKey:@"address"];
     [aCoder encodeObject:self.website forKey:@"website"];
     [aCoder encodeObject:self.avatar forKey:@"avatar"];
+    [aCoder encodeObject:self.latitude forKey:@"latitude"];
+    [aCoder encodeObject:self.longitude forKey:@"longitude"];
 }
 
 @end
