@@ -105,7 +105,6 @@
 - (void)goToContact:(id)sender
 {
     FormContactViewController * formContact = [[FormContactViewController alloc] init];
-    formContact.contact = sender;
     [self.navigationController pushViewController:formContact animated:YES];
 }
 

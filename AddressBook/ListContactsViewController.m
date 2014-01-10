@@ -75,6 +75,7 @@
 {
     FormContactViewController * formContact = [[FormContactViewController alloc] init];
     formContact.delegate = self;
+    formContact.context = self.context;
     [self.navigationController pushViewController:formContact animated:YES];
 }
 

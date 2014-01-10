@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnAvatar;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
+@property (weak, nonatomic) NSManagedObjectContext *context;
+
 - (void)addContact:(id) sender;
 - (IBAction)nextField:(UITextField *)currentField;
 - (IBAction)selectAvatar:(id)sender;

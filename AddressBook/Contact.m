@@ -10,6 +10,8 @@
 
 @implementation Contact
 
+@dynamic name, mobile, email, address, website, latitude, longitude, avatar;
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@ <%@>", self.name, self.email];

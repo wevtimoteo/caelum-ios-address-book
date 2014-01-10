@@ -23,6 +23,8 @@
 @property (weak, atomic) NSMutableArray * contacts;
 @property (assign) NSInteger selectedRow;
 
+@property (weak, nonatomic) NSManagedObjectContext *context;
+
 - (void) showContactForm;
 
 @end

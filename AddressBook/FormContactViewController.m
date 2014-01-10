@@ -83,7 +83,7 @@
 - (Contact *)loadContactData
 {
     if (!self.contact) {
-        self.contact = [[Contact alloc] init];
+        self.contact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.context];
     }
     
     self.contact.name = self.name.text;

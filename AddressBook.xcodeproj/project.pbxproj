@@ -23,6 +23,8 @@
 		1C5FAA72187B2FA700F5E8E6 /* FormContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FAA70187B2FA700F5E8E6 /* FormContactViewController.xib */; };
 		1C5FAA75187C1FE500F5E8E6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA74187C1FE500F5E8E6 /* Contact.m */; };
 		1C5FAA78187C5EEF00F5E8E6 /* ListContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */; };
+		1C6DA63A18803BC500EC1F7E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6DA63918803BC500EC1F7E /* CoreData.framework */; };
+		1C6DA63D18803CD700EC1F7E /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C6DA63B18803CD700EC1F7E /* ContactModel.xcdatamodeld */; };
 		1CE0DF24187ECE6900B3191B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE0DF23187ECE6900B3191B /* MessageUI.framework */; };
 		1CE0DF28187EFD3000B3191B /* ContactOnMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0DF26187EFD3000B3191B /* ContactOnMapViewController.m */; };
 		1CE0DF29187EFD3000B3191B /* ContactOnMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CE0DF27187EFD3000B3191B /* ContactOnMapViewController.xib */; };
@@ -74,6 +76,8 @@
 		1C5FAA76187C5EEF00F5E8E6 /* ListContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListContactsViewController.h; sourceTree = "<group>"; };
 		1C5FAA77187C5EEF00F5E8E6 /* ListContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListContactsViewController.m; sourceTree = "<group>"; };
 		1C5FAA7B187D9F6A00F5E8E6 /* FormContactViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormContactViewControllerDelegate.h; sourceTree = "<group>"; };
+		1C6DA63918803BC500EC1F7E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1C6DA63C18803CD700EC1F7E /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
 		1CE0DF23187ECE6900B3191B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1CE0DF25187EFD3000B3191B /* ContactOnMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactOnMapViewController.h; path = ../ContactOnMapViewController.h; sourceTree = "<group>"; };
 		1CE0DF26187EFD3000B3191B /* ContactOnMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactOnMapViewController.m; path = ../ContactOnMapViewController.m; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6DA63A18803BC500EC1F7E /* CoreData.framework in Frameworks */,
 				1CE0DF2B187EFDBD00B3191B /* MapKit.framework in Frameworks */,
 				1CE0DF24187ECE6900B3191B /* MessageUI.framework in Frameworks */,
 				1C5FAA42187B229C00F5E8E6 /* CoreGraphics.framework in Frameworks */,
@@ -151,6 +156,7 @@
 		1C5FAA3E187B229C00F5E8E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C6DA63918803BC500EC1F7E /* CoreData.framework */,
 				1CE0DF2A187EFDBD00B3191B /* MapKit.framework */,
 				1CE0DF23187ECE6900B3191B /* MessageUI.framework */,
 				1C5FAA3F187B229C00F5E8E6 /* Foundation.framework */,
@@ -165,6 +171,7 @@
 		1C5FAA45187B229C00F5E8E6 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				1C6DA63B18803CD700EC1F7E /* ContactModel.xcdatamodeld */,
 				1CE0DF25187EFD3000B3191B /* ContactOnMapViewController.h */,
 				1CE0DF26187EFD3000B3191B /* ContactOnMapViewController.m */,
 				1CE0DF27187EFD3000B3191B /* ContactOnMapViewController.xib */,
@@ -385,6 +392,7 @@
 				1CE0DF28187EFD3000B3191B /* ContactOnMapViewController.m in Sources */,
 				1C5FAA78187C5EEF00F5E8E6 /* ListContactsViewController.m in Sources */,
 				1C5FAA4C187B229C00F5E8E6 /* main.m in Sources */,
+				1C6DA63D18803CD700EC1F7E /* ContactModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +609,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C6DA63B18803CD700EC1F7E /* ContactModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C6DA63C18803CD700EC1F7E /* ContactModel.xcdatamodel */,
+			);
+			currentVersion = 1C6DA63C18803CD700EC1F7E /* ContactModel.xcdatamodel */;
+			path = ContactModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1C5FAA34187B229C00F5E8E6 /* Project object */;
 }
