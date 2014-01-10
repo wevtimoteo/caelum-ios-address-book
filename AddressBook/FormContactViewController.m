@@ -95,8 +95,6 @@
 
     self.contact.latitude = [NSNumber numberWithDouble:[self.latitude.text doubleValue]];
     self.contact.longitude = [NSNumber numberWithDouble:[self.longitude.text doubleValue]];
-
-    NSLog(@"Avatar do contato: %@", self.contact.avatar);
     
     return self.contact;
 }
