@@ -9,10 +9,6 @@
 #import "ContactOnMapViewController.h"
 #import "FormContactViewController.h"
 
-@interface ContactOnMapViewController ()
-
-@end
-
 @implementation ContactOnMapViewController
 
 # pragma mark - init
