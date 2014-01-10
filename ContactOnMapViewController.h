@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Contact.h"
 
-@interface ContactOnMapViewController : UIViewController
+@interface ContactOnMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *map;
 @property (weak, atomic) NSMutableArray * contacts;
