@@ -10,7 +10,7 @@
 #import "Contact.h"
 #import "FormContactViewControllerDelegate.h"
 
-@interface FormContactViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface FormContactViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak,nonatomic) IBOutlet UITextField *name;
 @property (weak,nonatomic) IBOutlet UITextField *mobile;
