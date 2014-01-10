@@ -27,6 +27,8 @@
     ListContactsViewController * list = [[ListContactsViewController alloc] init];
     ContactOnMapViewController * map = [[ContactOnMapViewController alloc] init];
 
+    map.contacts = self.contacts;
+
     UINavigationController * navMap = [[UINavigationController alloc] initWithRootViewController:map];
 
     list.contacts = self.contacts;

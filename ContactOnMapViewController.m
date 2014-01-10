@@ -14,6 +14,8 @@
 
 @implementation ContactOnMapViewController
 
+# pragma mark - init
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +24,21 @@
     }
     return self;
 }
+
+- (id)init
+{
+    self = [super init];
+
+    if (self) {
+        UIImage * img = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem * item = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:img tag:1];
+        self.tabBarItem = item;
+    }
+
+    return self;
+}
+
+# pragma mark - view
 
 - (void)viewDidLoad
 {
@@ -38,17 +55,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)init
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super init];
+    [self.map addAnnotations: self.contacts];
+}
 
-    if (self) {
-        UIImage * img = [UIImage imageNamed:@"mapa-contatos.png"];
-        UITabBarItem * item = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:img tag:1];
-        self.tabBarItem = item;
-    }
-
-    return self;
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.map removeAnnotations:self.contacts];
 }
 
 @end

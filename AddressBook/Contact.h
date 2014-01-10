@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface Contact : NSObject <NSCoding>
+@interface Contact : NSObject <NSCoding,MKAnnotation>
 
 @property NSString *name;
 @property NSString *mobile;

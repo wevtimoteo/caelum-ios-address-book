@@ -9,6 +9,8 @@
 #import "FormContactViewController.h"
 #import "Contact.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 @implementation FormContactViewController
 
 #pragma mark - init
@@ -160,6 +162,25 @@
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Não foi possível alterar o avatar" message:@"Precisamos do acesso à suas fotos ou da galeria para mudar seu avatar" delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Tentar novamente", nil] show];
     }
+}
+
+- (IBAction)searchCoordinates:(UIButton *)sender
+{
+    [self.loading startAnimating];
+    sender.hidden = YES;
+    CLGeocoder *gc = [[CLGeocoder alloc] init];
+
+    [gc geocodeAddressString:self.address.text completionHandler:^(NSArray * results, NSError * error)
+    {
+        if (!error && [results count] > 0) {
+            CLPlacemark * result = results[0];
+            CLLocationCoordinate2D coordinate = result.location.coordinate;
+            self.latitude.text = [NSString stringWithFormat:@"%f", coordinate.latitude];
+            self.longitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
+        }
+        [self.loading stopAnimating];
+        sender.hidden = NO;
+    }];
 }
 
 @end

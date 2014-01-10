@@ -23,10 +23,12 @@
 @property (strong,atomic) Contact * contact;
 @property (weak,atomic) id<FormContactViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *btnAvatar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 - (void)addContact:(id) sender;
 - (IBAction)nextField:(UITextField *)currentField;
 - (IBAction)selectAvatar:(id)sender;
+- (IBAction)searchCoordinates:(UIButton *)sender;
 - (id)initWithContact:(Contact *) contact;
 
 @end
